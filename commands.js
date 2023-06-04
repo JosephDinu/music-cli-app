@@ -47,6 +47,13 @@ program
         });
     });
 
+// LIST ALL MUSIC
+program
+.command("list")
+.alias("l")
+.description("List all musics")
+.action(() => listAllMusics());
+
 // UPDATE MUSIC
 program
     .command("update <_id>")
@@ -63,20 +70,6 @@ program
     .description("Delete a music")
     .action(_id => deleteMusic(_id));
 
-// DELETE PLAYLIST
-program
-    .command("delete-list <_id>")
-    .alias("dl")
-    .description("Delete a playlist")
-    .action(_id => deletePlaylist(_id));
-
-// LIST ALL MUSIC
-program
-    .command("list")
-    .alias("l")
-    .description("List all musics")
-    .action(() => listAllMusics());
-
 // CREATE NEW PLAYLIST
 program
     .command("new-list")
@@ -85,6 +78,13 @@ program
     .action(() => {
         inquirer.prompt(Questions.playlist).then(answer => newPlaylist(answer));
     })
+
+// DELETE PLAYLIST
+program
+    .command("delete-list <_id>")
+    .alias("dl")
+    .description("Delete a playlist")
+    .action(_id => deletePlaylist(_id));
 
 // ADD MUSIC TO PLAYLIST
 program
