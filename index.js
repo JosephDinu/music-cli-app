@@ -84,6 +84,18 @@ const deleteMusic = async (_id) => {
     mongoose.disconnect();
 };
 
+// Delete
+const deletePlaylist = async (_id) => {
+    await playlistCollection
+        .deleteOne({_id})
+        .then(() => {
+            console.log("Playlist Deleted");
+        })
+        .catch(err => console.log("The playlist id do not exist"));
+        
+    mongoose.disconnect();
+};
+
 // List all musics
 const listAllMusics = async () => {
     await musicCollection
@@ -224,6 +236,7 @@ export {
     findPlaylist,
     updateMusic,
     deleteMusic,
+    deletePlaylist,
     listAllMusics,
     newPlaylist,
     addMusicToPlaylist

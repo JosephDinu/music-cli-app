@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 import { Command } from "commander";
-import { addMusic, findMusic, findPlaylist, updateMusic, deleteMusic, listAllMusics, newPlaylist, addMusicToPlaylist } from "./index.js";
+import { addMusic, findMusic, findPlaylist, updateMusic, deleteMusic, listAllMusics, newPlaylist, addMusicToPlaylist, deletePlaylist } from "./index.js";
 import Questions from "./questions.js"
 import inquirer from 'inquirer';
 
@@ -10,7 +10,7 @@ program
     .version("1.0.0")
     .description("Music CLI Application")
 
-// ADD
+// ADD NEW MUSIC
 program
     .command("add")
     .alias("a")
@@ -19,7 +19,7 @@ program
         inquirer.prompt(Questions.music).then(answers => addMusic(answers));
     });
 
-// FIND
+// FIND MUSICS/PLAYLISTS
 program
     .command("find")
     .alias("f")
@@ -40,14 +40,14 @@ program
                 break;
 
                 default:
-                    console.log('please input "m" or "p"');
+                    console.log('Please input "m" or "p"');
                     getAnswer();
                 break;
             }
         });
     });
 
-// UPDATE
+// UPDATE MUSIC
 program
     .command("update <_id>")
     .alias("u")
@@ -56,21 +56,28 @@ program
         inquirer.prompt(Questions.music).then(answers => updateMusic(_id, answers));
     });
 
-// DELETE
+// DELETE MUSIC
 program
-    .command("delete <_id>")
-    .alias("d")
+    .command("delete-music <_id>")
+    .alias("dm")
     .description("Delete a music")
     .action(_id => deleteMusic(_id));
 
-// LIST
+// DELETE PLAYLIST
+program
+    .command("delete-list <_id>")
+    .alias("dl")
+    .description("Delete a playlist")
+    .action(_id => deletePlaylist(_id));
+
+// LIST ALL MUSIC
 program
     .command("list")
     .alias("l")
     .description("List all musics")
     .action(() => listAllMusics());
 
-// ADD PLAYLIST
+// CREATE NEW PLAYLIST
 program
     .command("new-list")
     .alias("nl")
