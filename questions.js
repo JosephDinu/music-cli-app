@@ -23,7 +23,7 @@ export default class Questions {
         {
             type: "input",
             name: "releaseYear",
-            message: "Release Year"
+            message: "Release Year(yyyy-mm-dd)"
         },
         {
             type: "input",
