@@ -16,19 +16,19 @@ Command use:
 
 `music-cli --help`
 
-Add new music:          `music-cli new-music`
-
-Add new playlist:       `music-cli new-list`
+Create new music:          `music-cli new-music`
 
 Find music/playlist:    `music-cli find`
+
+List all music          `music-cli list`
 
 Update music            `music-cli update <_id>`
 
 Delete music            `music-cli delete-music <_id>`
 
-Delete playlist         `music-cli delete-playlist <_id>`
+Create new playlist:       `music-cli new-list`
 
-List all music          `music-cli list`
+Delete playlist         `music-cli delete-playlist <_id>`
 
 Add music to playlist   `music-cli add-music`
 
