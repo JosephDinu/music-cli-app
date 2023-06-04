@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { addMusic, findMusic, updateMusic, deleteMusic, listAllMusics, addMusicToPlaylist } from "./collections/music.js";
-import { findPlaylist, deletePlaylist, newPlaylist } from "./collections/playlist.js"
+import { findPlaylist, deletePlaylist, newPlaylist, removeMusicFromList } from "./collections/playlist.js"
 
 // Map global promise - get rid of warning
 mongoose.Promise = global.Promise;
@@ -19,5 +19,6 @@ export {
     deletePlaylist,
     listAllMusics,
     newPlaylist,
-    addMusicToPlaylist
+    addMusicToPlaylist,
+    removeMusicFromList
 };

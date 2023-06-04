@@ -8,7 +8,8 @@ import { addMusic,
     listAllMusics,
     newPlaylist,
     addMusicToPlaylist,
-    deletePlaylist 
+    removeMusicFromList,
+    deletePlaylist
 } from "./index.js";
 import Questions from "./questions.js"
 import inquirer from 'inquirer';
@@ -102,6 +103,15 @@ program
     .description("Add a music to a playlist")
     .action(() => {
         inquirer.prompt(Questions.musicToPlaylist).then(answers => addMusicToPlaylist(answers.playlist, answers.title))
+    })
+
+// REMOVE MUSIC FROM PLAYLIST
+program
+    .command("remove-music")
+    .alias("rm")
+    .description("Remove a music from a playlist")
+    .action(() => {
+        inquirer.prompt(Questions.playlist).then(answer => removeMusicFromList(answer.name))
     })
 
 program.parse(process.argv);
