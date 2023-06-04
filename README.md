@@ -24,7 +24,9 @@ Find music/playlist:    `music-cli find`
 
 Update music            `music-cli update <_id>`
 
-Delete music            `music-cli delete <_id>`
+Delete music            `music-cli delete-music <_id>`
+
+Delete playlist         `music-cli delete-playlist <_id>`
 
 List all music          `music-cli list`
 
