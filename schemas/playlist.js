@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-
 // Playlist Schema
 const playlistSchema = new Schema({
     name: {
