@@ -68,6 +68,18 @@ const deleteMusic = async (_id) => {
             console.log("Music Deleted");
         })
         .catch(err => console.log("The music id do not exist"))
+
+    // Remove music id from playlist
+    await playlistCollection
+        .find({musics : _id})
+        .exec()
+        .then(result => {
+            result.forEach(async item => {
+                item.musics.splice(item.musics.indexOf(_id), 1);
+
+                await playlistCollection.findOneAndUpdate({_id: item._id.toString()}, {musics: item.musics})
+            })
+        })
         .finally(() => mongoose.disconnect());
 };
 
