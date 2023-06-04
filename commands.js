@@ -1,6 +1,15 @@
 #! /usr/bin/env node
 import { Command } from "commander";
-import { addMusic, findMusic, findPlaylist, updateMusic, deleteMusic, listAllMusics, newPlaylist, addMusicToPlaylist, deletePlaylist } from "./index.js";
+import { addMusic,
+    findMusic,
+    findPlaylist,
+    updateMusic,
+    deleteMusic,
+    listAllMusics,
+    newPlaylist,
+    addMusicToPlaylist,
+    deletePlaylist 
+} from "./index.js";
 import Questions from "./questions.js"
 import inquirer from 'inquirer';
 
