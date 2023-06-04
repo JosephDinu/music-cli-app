@@ -16,7 +16,7 @@ Command use:
 
 `music-cli --help`
 
-Add new music:          `music-cli add`
+Add new music:          `music-cli new-music`
 
 Add new playlist:       `music-cli new-list`
 
@@ -30,6 +30,6 @@ Delete playlist         `music-cli delete-playlist <_id>`
 
 List all music          `music-cli list`
 
-Add music to playlist   `music-cli music-to-list`
+Add music to playlist   `music-cli add-music`
 
 Remove music in playlist   `music-cli remove-music`

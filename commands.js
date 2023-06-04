@@ -22,8 +22,8 @@ program
 
 // ADD NEW MUSIC
 program
-    .command("add")
-    .alias("a")
+    .command("new-music")
+    .alias("nm")
     .description("Add a music track")
     .action(() => {
         inquirer.prompt(Questions.music).then(answers => addMusic(answers));
@@ -98,8 +98,8 @@ program
 
 // ADD MUSIC TO PLAYLIST
 program
-    .command("music-to-playlist")
-    .alias("mtp")
+    .command("add-music")
+    .alias("am")
     .description("Add a music to a playlist")
     .action(() => {
         inquirer.prompt(Questions.musicToPlaylist).then(answers => addMusicToPlaylist(answers.playlist, answers.title))
